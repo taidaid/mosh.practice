@@ -1,0 +1,6 @@
+.Counter {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  font-family: "helvetica neue", helvetica, sans-serif;
+}
