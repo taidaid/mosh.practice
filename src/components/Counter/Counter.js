@@ -39,6 +39,9 @@ class Counter extends Component {
                   window.confirm("Delete this?")
                 ) {
                   this.props.onDelete(this.props.counter.id);
+                }
+                if (this.props.counter.value === 0) {
+                  this.props.onResetCounter(this.props.counter);
                 } else {
                   this.props.onDecrement(this.props.counter.id);
                 }

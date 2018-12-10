@@ -28,9 +28,15 @@ class Counters extends Component {
     this.setState({ counters: counters });
   };
 
-  handleReset = () => {
+  handleResetAll = () => {
     const { counters } = this.state;
     this.setState(counters.map(c => (c.value = 0)));
+  };
+
+  handleResetCounter = counterId => {
+    const { counters } = this.state;
+    const index = counters.indexOf(counterId);
+    this.setState(Object.assign({}, (counters[index].value = 0)));
   };
 
   handleIncrement = counterId => {
@@ -58,7 +64,7 @@ class Counters extends Component {
             </button>
             <button
               className="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-green"
-              onClick={this.handleReset}
+              onClick={this.handleResetAll}
             >
               Reset
             </button>
@@ -69,6 +75,7 @@ class Counters extends Component {
               onDelete={this.handleDelete}
               onIncrement={this.handleIncrement}
               onDecrement={this.handleDecrement}
+              onResetCounter={this.handleResetCounter}
               counter={counter}
             />
           ))}
