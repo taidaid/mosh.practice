@@ -12,7 +12,7 @@ class Counter extends Component {
           <div className="Amount">
             <button
               className={
-                this.props.value === 0
+                this.props.counter.value === 0
                   ? "f6 link dim br3 ph3 pv2 mb2 dib black b bg-gold"
                   : "f6 link dim br3 ph3 pv2 mb2 dib white bg-dark-blue"
               }
@@ -33,11 +33,19 @@ class Counter extends Component {
           <div className="Decrement">
             <button
               className="f6 link dim br2 ph3 pv2 mb2 dib white bg-near-black"
-              onClick={() =>
-                this.props.counter.value === 0
-                  ? this.props.onDelete(this.props.counter.id)
-                  : this.props.onDecrement(this.props.counter.id)
-              }
+              onClick={() => {
+                if (
+                  this.props.counter.value === 0 &&
+                  window.confirm("Delete this?")
+                ) {
+                  this.props.onDelete(this.props.counter.id);
+                } else {
+                  this.props.onDecrement(this.props.counter.id);
+                }
+                // this.props.counter.value === 0
+                //   ? this.props.onDelete(this.props.counter.id)
+                //   : this.props.onDecrement(this.props.counter.id)
+              }}
             >
               Decrement
             </button>

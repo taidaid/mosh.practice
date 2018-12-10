@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import Counter from "./Counter";
+import Counter from "../Counter/Counter";
 import "./Counters.css";
 import "tachyons";
 
 class Counters extends Component {
   state = {
     counters: [
-      { id: 1, value: 4 },
-      { id: 2, value: 0 },
-      { id: 3, value: 0 },
-      { id: 4, value: 0 }
+      { id: 1, value: 0 },
+      { id: 2, value: 2 },
+      { id: 3, value: 3 },
+      { id: 4, value: 4 }
     ]
   };
 
@@ -28,6 +28,11 @@ class Counters extends Component {
     this.setState({ counters: counters });
   };
 
+  handleReset = () => {
+    const { counters } = this.state;
+    this.setState(counters.map(c => (c.value = 0)));
+  };
+
   handleIncrement = counterId => {
     const { counters } = this.state;
     counters.map(c => (counterId === c.id ? c.value++ : c));
@@ -44,12 +49,20 @@ class Counters extends Component {
     return (
       <div className="Counters">
         <div className="list pl0 ml0 center mw6 ba b--light-silver br2">
-          <button
-            className="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-green"
-            onClick={this.addCounters}
-          >
-            Add Counter
-          </button>
+          <div style={{ display: "flex", justifyContent: "space-around" }}>
+            <button
+              className="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-green"
+              onClick={this.addCounters}
+            >
+              Add Counter
+            </button>
+            <button
+              className="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-green"
+              onClick={this.handleReset}
+            >
+              Reset
+            </button>
+          </div>
           {this.state.counters.map(counter => (
             <Counter
               key={counter.id}
