@@ -4,28 +4,32 @@ import "tachyons";
 
 class Counter extends Component {
   render() {
-    console.log(this.props);
+    const {
+      counter,
+      onIncrement,
+      onDelete,
+      onResetCounter,
+      onDecrement
+    } = this.props;
     return (
       <div>
-        <h4>Counter #{this.props.counter.id}</h4>
+        <h4>Counter #{counter.id}</h4>
         <div className="Counter">
           <div className="Amount">
             <button
               className={
-                this.props.counter.value === 0
+                counter.value === 0
                   ? "f6 link dim br3 ph3 pv2 mb2 dib black b bg-gold"
                   : "f6 link dim br3 ph3 pv2 mb2 dib white bg-dark-blue"
               }
             >
-              {this.props.counter.value === 0
-                ? "Zero"
-                : this.props.counter.value}
+              {counter.value === 0 ? "Zero" : counter.value}
             </button>
           </div>
           <div className="Increment">
             <button
               className="f6 link dim br2 ph3 pv2 mb2 dib white bg-near-black"
-              onClick={() => this.props.onIncrement(this.props.counter.id)}
+              onClick={() => onIncrement(counter.id)}
             >
               Increment
             </button>
@@ -34,27 +38,24 @@ class Counter extends Component {
             <button
               className="f6 link dim br2 ph3 pv2 mb2 dib white bg-near-black"
               onClick={() => {
-                if (
-                  this.props.counter.value === 0 &&
-                  window.confirm("Delete this?")
-                ) {
-                  this.props.onDelete(this.props.counter.id);
+                if (counter.value === 0 && window.confirm("Delete this?")) {
+                  onDelete(counter.id);
                 }
-                if (this.props.counter.value === 0) {
-                  this.props.onResetCounter(this.props.counter);
+                if (counter.value === 0) {
+                  onResetCounter(counter);
                 } else {
-                  this.props.onDecrement(this.props.counter.id);
+                  onDecrement(counter.id);
                 }
-                // this.props.counter.value === 0
-                //   ? this.props.onDelete(this.props.counter.id)
-                //   : this.props.onDecrement(this.props.counter.id)
+                // counter.value === 0
+                //   ? onDelete(counter.id)
+                //   : onDecrement(counter.id)
               }}
             >
               Decrement
             </button>
             <button
               className="f6 link dim br2 ph3 pv2 mb2 dib bg-dark-red"
-              onClick={() => this.props.onDelete(this.props.counter.id)}
+              onClick={() => onDelete(counter.id)}
             >
               Delete
             </button>
