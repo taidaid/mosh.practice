@@ -1,16 +1,16 @@
 Web Store Project
 =================
 
-1) Getting Started: \n
+1) Getting Started:  Turkey Gobble
 git clone https://github.com/taidaid/mosh.practice.git
 cd mosh.practice
 npm install
 
-2)Built with: \n
+2)Built with: 
 Create-react-app
 Tachyons
 
-3)Next Steps: \n
+3)Next Steps: 
 Improve layout
 Counters Component should be a pop-up and positioned above the 'Shopping Cart' link in Navbar Component
 
