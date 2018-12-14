@@ -21,7 +21,7 @@ Improve layout
 
 Counters Component should be a pop-up and positioned above the 'Shopping Cart' link in Navbar Component
 
-
+=============================
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
