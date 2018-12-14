@@ -1,17 +1,24 @@
 Web Store Project
 =================
 
-1) Getting Started
+1) Getting Started: 
+
 git clone https://github.com/taidaid/mosh.practice.git
+
 cd mosh.practice
+
 npm install
 
-2)Built with
+2) Built with:
+
 Create-react-app
+
 Tachyons
 
-3)Next Steps
+3) Next Steps: 
+
 Improve layout
+
 Counters Component should be a pop-up and positioned above the 'Shopping Cart' link in Navbar Component
 
 
