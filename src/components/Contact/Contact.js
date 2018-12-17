@@ -7,7 +7,7 @@ const Contact = () => {
       <img
         src="http://tachyons.io/img/space.jpg"
         className="w-100 f5 measure"
-        alt="Photo of outer space"
+        alt="outer space"
       />
       <p className="measure lh-copy">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
