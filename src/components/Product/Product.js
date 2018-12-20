@@ -13,9 +13,6 @@ const Product = ({ id, title, img, onAddCounter }) => {
         <img src={img} className="db w-100 br2 br--top" alt={id} />
         <div className="pa2 ph3-ns pb3-ns">
           <div className="dt w-100 mt1">
-            {/* <div className="dtc">
-              <h1 className="f5 f4-ns mv0">Cat</h1>
-            </div> */}
             <div className="dtc tr">
               <h2 className="f5 mv0">$1000</h2>
             </div>

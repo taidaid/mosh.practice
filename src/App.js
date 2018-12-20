@@ -19,29 +19,10 @@ class App extends Component {
   handleAddCounter = id => {
     const { counters } = this.state;
 
-    console.log("handleAddCounter", id);
-    // const counterId = id;
-    //
-    //
-    //
-    //
-    //loop through the response and create a Counters array of objects with the counterId matched to the incoming productId from Product's onClick
-    //we want the product cards to be able to create one, and only one at a time, paired counter. The counterId should display above the counter and
-    //the counterId should match the product that spawned it
-    //
-    //
-    //
-    //
-    //
-    //const counterIds = response.store.map()
-    //this.setState(Object.assign(this.state.counters, )
-    // console.log(! counters.filter(counter => counter.id === id).length > 0);
     if (!counters.filter(counter => counter.id === id).length > 0) {
       counters.push({ id: id, value: 0 });
-      console.log("ID:", id);
     }
 
-    // console.log("Added", counterId);
     this.setState(counters);
   };
 
@@ -83,21 +64,12 @@ class App extends Component {
         })
       : this.setState({
           showMenu: true
-          // },
-          // () => {
-          //   document.addEventListener("click", this.closeMenu);
         });
   };
 
   handleRoute = route => {
     this.setState({ route: route });
   };
-
-  // closeMenu = () => {
-  //   this.setState({ showMenu: false }, () => {
-  //     document.removeEventListener("click", this.closeMenu);
-  //   });
-  // };
 
   componentDidMount() {
     fetch("http://localhost:3000/", {
@@ -176,7 +148,6 @@ class App extends Component {
             <About />
             {this.state.showMenu ? (
               <main className="container Counters">
-                {/* I need to add an onClick() to each product card that then increments a counter !!!!that is linked to its product id!!!! */}
                 <Counters
                   counters={this.state.counters}
                   onResetAll={this.handleResetAll}

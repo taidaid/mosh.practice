@@ -46,9 +46,6 @@ class Counter extends Component {
                 } else {
                   onDecrement(counter.id);
                 }
-                // counter.value === 0
-                //   ? onDelete(counter.id)
-                //   : onDecrement(counter.id)
               }}
             >
               Decrement
