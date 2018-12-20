@@ -16,18 +16,17 @@ class App extends Component {
     route: "store"
   };
 
-  handleAddCounter = () => {
+  handleAddCounter = props => {
     const { counters } = this.state;
-    if (counters.length === 0) {
-      counters.push({ id: 1, value: 0 });
-    } else {
-      counters.push({ id: counters[counters.length - 1].id + 1, value: 0 });
-    }
+    const id = props;
+    counters.push({ id: id, value: 0 });
+    console.log("Added", id);
     this.setState(counters);
   };
 
   handleDelete = counterId => {
     const counters = this.state.counters.filter(c => c.id !== counterId);
+    console.log("Deleted", counterId);
     this.setState({ counters: counters });
   };
 
@@ -80,19 +79,14 @@ class App extends Component {
   // };
 
   componentDidMount() {
-    console.log("ComponentDidMount");
     fetch("http://localhost:3000/", {
       method: "GET",
       headers: { "Content-Type": "application.json" }
     })
+      .then(response => response.json())
       .then(response => {
-        console.log("response123", JSON.stringify(response.body));
-        response.json();
-      })
-      .then(response => {
-        console.log("ComponentDidMount");
-        console.log(response);
-        this.setState(response);
+        this.setState(Object.assign(this.state.store, response.store));
+        console.log();
       })
       .catch(console.log);
   }
@@ -105,13 +99,15 @@ class App extends Component {
         return (
           <React.Fragment>
             <div className="App">
-              <Store products={this.state.store} />
+              <Store
+                products={this.state.store}
+                onAddCounter={this.handleAddCounter}
+              />
 
               {this.state.showMenu ? (
                 <main className="container Counters">
                   <Counters
                     counters={this.state.counters}
-                    onAddCounter={this.handleAddCounter}
                     onResetAll={this.handleResetAll}
                     onResetCounter={this.handleResetCounter}
                     onDelete={this.handleDelete}
@@ -123,9 +119,7 @@ class App extends Component {
             </div>
 
             <Navbar
-              totalCounters={
-                this.state.counters.filter(c => c.value > 0).length
-              }
+              totalCounters={this.state.counters.length}
               showMenu={this.showMenu.bind(this)}
               onRouteChange={this.handleRoute}
             />
@@ -140,7 +134,6 @@ class App extends Component {
               <main className="container Counters">
                 <Counters
                   counters={this.state.counters}
-                  onAddCounter={this.handleAddCounter}
                   onResetAll={this.handleResetAll}
                   onResetCounter={this.handleResetCounter}
                   onDelete={this.handleDelete}
@@ -150,9 +143,7 @@ class App extends Component {
               </main>
             ) : null}
             <Navbar
-              totalCounters={
-                this.state.counters.filter(c => c.value > 0).length
-              }
+              totalCounters={this.state.counters.length}
               showMenu={this.showMenu}
               onRouteChange={this.handleRoute}
             />
@@ -165,9 +156,9 @@ class App extends Component {
             <About />
             {this.state.showMenu ? (
               <main className="container Counters">
+                {/* I need to add an onClick() to each product card that then increments a counter !!!!that is linked to its product id!!!! */}
                 <Counters
                   counters={this.state.counters}
-                  onAddCounter={this.handleAddCounter}
                   onResetAll={this.handleResetAll}
                   onResetCounter={this.handleResetCounter}
                   onDelete={this.handleDelete}
@@ -177,9 +168,7 @@ class App extends Component {
               </main>
             ) : null}
             <Navbar
-              totalCounters={
-                this.state.counters.filter(c => c.value > 0).length
-              }
+              totalCounters={this.state.counters.length}
               showMenu={this.showMenu}
               onRouteChange={this.handleRoute}
             />
@@ -194,7 +183,6 @@ class App extends Component {
               <main className="container Counters">
                 <Counters
                   counters={this.state.counters}
-                  onAddCounter={this.handleAddCounter}
                   onResetAll={this.handleResetAll}
                   onResetCounter={this.handleResetCounter}
                   onDelete={this.handleDelete}
@@ -204,9 +192,7 @@ class App extends Component {
               </main>
             ) : null}
             <Navbar
-              totalCounters={
-                this.state.counters.filter(c => c.value > 0).length
-              }
+              totalCounters={this.state.counters.length}
               showMenu={this.showMenu}
               onRouteChange={this.handleRoute}
             />
@@ -217,13 +203,15 @@ class App extends Component {
         return (
           <React.Fragment>
             <div className="App">
-              <Store products={this.state.store} />
+              <Store
+                products={this.state.store}
+                onAddCounter={this.handleAddCounter}
+              />
 
               {this.state.showMenu ? (
                 <main className="container Counters">
                   <Counters
                     counters={this.state.counters}
-                    onAddCounter={this.handleAddCounter}
                     onResetAll={this.handleResetAll}
                     onResetCounter={this.handleResetCounter}
                     onDelete={this.handleDelete}
@@ -235,9 +223,7 @@ class App extends Component {
             </div>
 
             <Navbar
-              totalCounters={
-                this.state.counters.filter(c => c.value > 0).length
-              }
+              totalCounters={this.state.counters.length}
               showMenu={this.showMenu}
               onRouteChange={this.handleRoute}
             />

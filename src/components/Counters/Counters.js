@@ -6,7 +6,6 @@ import "tachyons";
 class Counters extends Component {
   render() {
     const {
-      onAddCounter,
       onResetAll,
       onDelete,
       onIncrement,
@@ -19,12 +18,6 @@ class Counters extends Component {
       <div className="Counters">
         <div className="list pl0 ml0 center mw6 ba b--light-silver br2">
           <div style={{ display: "flex", justifyContent: "space-around" }}>
-            <button
-              className="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-green"
-              onClick={onAddCounter}
-            >
-              Add Counter
-            </button>
             <button
               className="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-green"
               onClick={onResetAll}

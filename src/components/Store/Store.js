@@ -3,10 +3,10 @@ import "./Store.css";
 import "tachyons";
 import Product from "../Product/Product";
 
-const Store = ({ products }) => {
+const Store = ({ products, onAddCounter }) => {
   return products === "Loading" ? (
     <article>
-      <h2 className="f3 fw4 pa3 mv0">Albums</h2>
+      <h2 className="f3 fw4 pa3 mv0">Store</h2>
       <div className="cf pa2">
         <div className="Store">{products}</div>
       </div>
@@ -20,6 +20,7 @@ const Store = ({ products }) => {
             return (
               <React.Fragment>
                 <Product
+                  onAddCounter={onAddCounter}
                   key={product.id}
                   title={product.title}
                   img={product.img}
