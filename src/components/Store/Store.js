@@ -20,8 +20,9 @@ const Store = ({ products, onAddCounter }) => {
             return (
               <React.Fragment>
                 <Product
-                  onAddCounter={onAddCounter}
                   key={product.id}
+                  id={product.id}
+                  onAddCounter={onAddCounter}
                   title={product.title}
                   img={product.img}
                   // price={product.price}

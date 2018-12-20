@@ -16,11 +16,32 @@ class App extends Component {
     route: "store"
   };
 
-  handleAddCounter = props => {
+  handleAddCounter = id => {
     const { counters } = this.state;
-    const id = props;
-    counters.push({ id: id, value: 0 });
-    console.log("Added", id);
+
+    console.log("handleAddCounter", id);
+    // const counterId = id;
+    //
+    //
+    //
+    //
+    //loop through the response and create a Counters array of objects with the counterId matched to the incoming productId from Product's onClick
+    //we want the product cards to be able to create one, and only one at a time, paired counter. The counterId should display above the counter and
+    //the counterId should match the product that spawned it
+    //
+    //
+    //
+    //
+    //
+    //const counterIds = response.store.map()
+    //this.setState(Object.assign(this.state.counters, )
+    // console.log(! counters.filter(counter => counter.id === id).length > 0);
+    if (!counters.filter(counter => counter.id === id).length > 0) {
+      counters.push({ id: id, value: 0 });
+      console.log("ID:", id);
+    }
+
+    // console.log("Added", counterId);
     this.setState(counters);
   };
 
