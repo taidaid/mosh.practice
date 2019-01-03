@@ -2,13 +2,16 @@ import React from "react";
 import "tachyons";
 import "./Product.css";
 
-const Product = ({ id, title, img, onAddCounter }) => {
+const Product = ({ id, title, img, onAddCounter, name }) => {
   return (
     // add dynamic prices
     <div className="Product">
       <article
         className="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center"
-        onClick={() => onAddCounter(id)}
+        onClick={() => {
+          onAddCounter(id, name);
+          // console.log("product id: " + id);
+        }}
       >
         <img src={img} className="db w-100 br2 br--top" alt={id} />
         <div className="pa2 ph3-ns pb3-ns">

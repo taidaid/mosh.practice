@@ -1,7 +1,6 @@
-Web Store Project
-=================
+# Web Store Project
 
-1) Getting Started: 
+1. Getting Started:
 
 git clone https://github.com/taidaid/mosh.practice.git
 
@@ -9,17 +8,19 @@ cd mosh.practice
 
 npm install
 
-2) Built with:
+2. Built with:
 
 Create-react-app
 
 Tachyons
 
-3) Next Steps: 
+3. Next Steps:
 
 Improve layout
-
-Counters Component should be a pop-up and positioned above the 'Shopping Cart' link in Navbar Component
+-Set Navbar to top
+-Below components should not overlap
+-Counters Component should be a pop-up and positioned below the 'Shopping Cart' button in Navbar Component
+-add URL changes when route changes in state to allow back button funcitonality
 
 =============================
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

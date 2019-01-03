@@ -13,7 +13,7 @@ class Counter extends Component {
     } = this.props;
     return (
       <div>
-        <h4>Counter #{counter.id}</h4>
+        <h4>{counter.name}</h4>
         <div className="Counter">
           <div className="Amount">
             <button
@@ -50,6 +50,8 @@ class Counter extends Component {
             >
               Decrement
             </button>
+          </div>
+          <div className="Delete">
             <button
               className="f6 link dim br2 ph3 pv2 mb2 dib bg-dark-red"
               onClick={() => onDelete(counter.id)}

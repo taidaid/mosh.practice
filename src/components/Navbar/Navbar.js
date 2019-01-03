@@ -5,10 +5,7 @@ import "tachyons";
 const Navbar = ({ totalCounters, showMenu, onRouteChange }) => {
   return (
     <div className="Navbar">
-      <header
-        className="bg-black-90 fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l"
-        style={{ bottom: "0" }}
-      >
+      <header className="bg-black-90 w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
         <nav className="f6 fw6 ttu tracked">
           <p
             className="link dim white dib mr3"

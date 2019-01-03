@@ -16,11 +16,13 @@ class App extends Component {
     route: "store"
   };
 
-  handleAddCounter = id => {
+  handleAddCounter = (id, name) => {
     const { counters } = this.state;
+    // console.log("Add Counter: " + id);
 
     if (!counters.filter(counter => counter.id === id).length > 0) {
-      counters.push({ id: id, value: 0 });
+      // console.log("counter id: " + counters.id);
+      counters.push({ id: id, name: name, value: 0 });
     }
 
     this.setState(counters);
@@ -91,11 +93,11 @@ class App extends Component {
         return (
           <React.Fragment>
             <div className="App">
-              <Store
-                products={this.state.store}
-                onAddCounter={this.handleAddCounter}
+              <Navbar
+                totalCounters={this.state.counters.length}
+                showMenu={this.showMenu.bind(this)}
+                onRouteChange={this.handleRoute}
               />
-
               {this.state.showMenu ? (
                 <main className="container Counters">
                   <Counters
@@ -108,20 +110,23 @@ class App extends Component {
                   />
                 </main>
               ) : null}
-            </div>
 
-            <Navbar
-              totalCounters={this.state.counters.length}
-              showMenu={this.showMenu.bind(this)}
-              onRouteChange={this.handleRoute}
-            />
+              <Store
+                products={this.state.store}
+                onAddCounter={this.handleAddCounter}
+              />
+            </div>
           </React.Fragment>
         );
       }
       case "home": {
         return (
           <React.Fragment>
-            <Home />
+            <Navbar
+              totalCounters={this.state.counters.length}
+              showMenu={this.showMenu}
+              onRouteChange={this.handleRoute}
+            />
             {this.state.showMenu ? (
               <main className="container Counters">
                 <Counters
@@ -134,18 +139,18 @@ class App extends Component {
                 />
               </main>
             ) : null}
-            <Navbar
-              totalCounters={this.state.counters.length}
-              showMenu={this.showMenu}
-              onRouteChange={this.handleRoute}
-            />
+            <Home />
           </React.Fragment>
         );
       }
       case "about": {
         return (
           <React.Fragment>
-            <About />
+            <Navbar
+              totalCounters={this.state.counters.length}
+              showMenu={this.showMenu}
+              onRouteChange={this.handleRoute}
+            />
             {this.state.showMenu ? (
               <main className="container Counters">
                 <Counters
@@ -158,18 +163,18 @@ class App extends Component {
                 />
               </main>
             ) : null}
-            <Navbar
-              totalCounters={this.state.counters.length}
-              showMenu={this.showMenu}
-              onRouteChange={this.handleRoute}
-            />
+            <About />
           </React.Fragment>
         );
       }
       case "contact": {
         return (
           <React.Fragment>
-            <Contact />
+            <Navbar
+              totalCounters={this.state.counters.length}
+              showMenu={this.showMenu}
+              onRouteChange={this.handleRoute}
+            />
             {this.state.showMenu ? (
               <main className="container Counters">
                 <Counters
@@ -182,23 +187,19 @@ class App extends Component {
                 />
               </main>
             ) : null}
-            <Navbar
-              totalCounters={this.state.counters.length}
-              showMenu={this.showMenu}
-              onRouteChange={this.handleRoute}
-            />
+            <Contact />
           </React.Fragment>
         );
       }
       default: {
         return (
           <React.Fragment>
+            <Navbar
+              totalCounters={this.state.counters.length}
+              showMenu={this.showMenu}
+              onRouteChange={this.handleRoute}
+            />
             <div className="App">
-              <Store
-                products={this.state.store}
-                onAddCounter={this.handleAddCounter}
-              />
-
               {this.state.showMenu ? (
                 <main className="container Counters">
                   <Counters
@@ -211,13 +212,11 @@ class App extends Component {
                   />
                 </main>
               ) : null}
+              <Store
+                products={this.state.store}
+                onAddCounter={this.handleAddCounter}
+              />
             </div>
-
-            <Navbar
-              totalCounters={this.state.counters.length}
-              showMenu={this.showMenu}
-              onRouteChange={this.handleRoute}
-            />
           </React.Fragment>
         );
       }

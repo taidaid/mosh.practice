@@ -15,8 +15,8 @@ class Counters extends Component {
     } = this.props;
 
     return (
-      <div className="Counters">
-        <div className="list pl0 ml0 center mw6 ba b--light-silver br2">
+      <div className="Counters o-90">
+        <div className="list pl0 ml0 center ba b--light-silver br2">
           <div style={{ display: "flex", justifyContent: "space-around" }}>
             <button
               className="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-green"
