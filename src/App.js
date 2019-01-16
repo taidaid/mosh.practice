@@ -11,7 +11,27 @@ import "tachyons";
 class App extends Component {
   state = {
     counters: [],
-    store: [],
+    store: [
+      {
+        id: 1,
+        name: "Big cat",
+        img: "https://i.ytimg.com/vi/RlwCG7r4saw/maxresdefault.jpg",
+        title: "accusamus beatae ad facilis cum similique qui sunt"
+      },
+      {
+        id: 2,
+        name: "Small cat",
+        img: "https://i.ytimg.com/vi/hiSlzuoRtIA/maxresdefault.jpg",
+        title: "accusamus beatae ad facilis cum similique qui sunt"
+      },
+      {
+        id: 3,
+        name: "So-so cat",
+        img:
+          "https://www.cat-breeds-encyclopedia.com/images/American-bobtail-cat.jpg",
+        title: "accusamus beatae ad facilis cum similique qui sunt"
+      }
+    ],
     showMenu: false,
     route: "store"
   };
@@ -73,17 +93,17 @@ class App extends Component {
     this.setState({ route: route });
   };
 
-  componentDidMount() {
-    fetch("http://localhost:3000/", {
-      method: "GET",
-      headers: { "Content-Type": "application.json" }
-    })
-      .then(response => response.json())
-      .then(response => {
-        this.setState(Object.assign(this.state.store, response.store));
-      })
-      .catch(console.log);
-  }
+  // componentDidMount() {
+  //   fetch("http://localhost:3000/", {
+  //     method: "GET",
+  //     headers: { "Content-Type": "application.json" }
+  //   })
+  //     .then(response => response.json())
+  //     .then(response => {
+  //       this.setState(Object.assign(this.state.store, response.store));
+  //     })
+  //     .catch(console.log);
+  // }
 
   render() {
     const { route } = this.state;
