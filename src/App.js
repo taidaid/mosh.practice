@@ -132,6 +132,7 @@ class App extends Component {
               ) : null}
 
               <Store
+                className=""
                 products={this.state.store}
                 onAddCounter={this.handleAddCounter}
               />
