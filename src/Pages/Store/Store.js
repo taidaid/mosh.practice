@@ -1,7 +1,7 @@
 import React from "react";
 import "./Store.css";
 import "tachyons";
-import Product from "../Product/Product";
+import Product from "../../components/Product/Product";
 
 const Store = ({ products, onAddCounter }) => {
   return products === "Loading" ? (
@@ -14,7 +14,7 @@ const Store = ({ products, onAddCounter }) => {
   ) : (
     <article>
       <h2 className="f3 fw4 pa3 mv0 tc">Store</h2>
-      <div className="cf pa2">
+      <div className="cf pa3">
         <div className="Store">
           {products.map(product => {
             return (

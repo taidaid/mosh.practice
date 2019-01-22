@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Counters from "./components/Counters/Counters";
 import Navbar from "./components/Navbar/Navbar";
-import Store from "./components/Store/Store";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
+import Store from "./Pages/Store/Store";
+import Home from "./Pages/Home/Home";
+import About from "./Pages/About/About";
+import Contact from "./Pages/Contact/Contact";
 import "./App.css";
 import "tachyons";
 
@@ -26,6 +26,44 @@ class App extends Component {
       },
       {
         id: 3,
+        name: "So-so cat",
+        img:
+          "https://www.cat-breeds-encyclopedia.com/images/American-bobtail-cat.jpg",
+        title: "accusamus beatae ad facilis cum similique qui sunt"
+      },
+      {
+        id: 4,
+        name: "Big cat",
+        img: "https://i.ytimg.com/vi/RlwCG7r4saw/maxresdefault.jpg",
+        title: "accusamus beatae ad facilis cum similique qui sunt"
+      },
+      {
+        id: 5,
+        name: "Small cat",
+        img: "https://i.ytimg.com/vi/hiSlzuoRtIA/maxresdefault.jpg",
+        title: "accusamus beatae ad facilis cum similique qui sunt"
+      },
+      {
+        id: 6,
+        name: "So-so cat",
+        img:
+          "https://www.cat-breeds-encyclopedia.com/images/American-bobtail-cat.jpg",
+        title: "accusamus beatae ad facilis cum similique qui sunt"
+      },
+      {
+        id: 7,
+        name: "Big cat",
+        img: "https://i.ytimg.com/vi/RlwCG7r4saw/maxresdefault.jpg",
+        title: "accusamus beatae ad facilis cum similique qui sunt"
+      },
+      {
+        id: 8,
+        name: "Small cat",
+        img: "https://i.ytimg.com/vi/hiSlzuoRtIA/maxresdefault.jpg",
+        title: "accusamus beatae ad facilis cum similique qui sunt"
+      },
+      {
+        id: 9,
         name: "So-so cat",
         img:
           "https://www.cat-breeds-encyclopedia.com/images/American-bobtail-cat.jpg",
