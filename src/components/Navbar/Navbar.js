@@ -37,7 +37,8 @@ const Navbar = ({ totalCounters, showMenu, onRouteChange }) => {
           </p>
           <p
             className="link f6 br2 ph3 pv2 mb2 mr3 dim dib white bg-dark-gray "
-            title="Count"
+            title="Shopping Cart"
+            id="shoppingCart"
             onClick={showMenu}
           >
             Shopping Cart
