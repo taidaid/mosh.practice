@@ -11,63 +11,72 @@ import "tachyons";
 class App extends Component {
   state = {
     counters: [],
-    store: [
+    products: [
       {
         id: 1,
         name: "Big cat",
         img: "https://i.ytimg.com/vi/RlwCG7r4saw/maxresdefault.jpg",
-        title: "accusamus beatae ad facilis cum similique qui sunt"
+        title: "accusamus beatae ad facilis cum similique qui sunt",
+        price: 1000
       },
       {
         id: 2,
         name: "Small cat",
         img: "https://i.ytimg.com/vi/hiSlzuoRtIA/maxresdefault.jpg",
-        title: "accusamus beatae ad facilis cum similique qui sunt"
+        title: "accusamus beatae ad facilis cum similique qui sunt",
+        price: 10
       },
       {
         id: 3,
         name: "So-so cat",
         img:
           "https://www.cat-breeds-encyclopedia.com/images/American-bobtail-cat.jpg",
-        title: "accusamus beatae ad facilis cum similique qui sunt"
+        title: "accusamus beatae ad facilis cum similique qui sunt",
+        price: 100
       },
       {
         id: 4,
         name: "Big cat",
         img: "https://i.ytimg.com/vi/RlwCG7r4saw/maxresdefault.jpg",
-        title: "accusamus beatae ad facilis cum similique qui sunt"
+        title: "accusamus beatae ad facilis cum similique qui sunt",
+        price: 1000
       },
       {
         id: 5,
         name: "Small cat",
         img: "https://i.ytimg.com/vi/hiSlzuoRtIA/maxresdefault.jpg",
-        title: "accusamus beatae ad facilis cum similique qui sunt"
+        title: "accusamus beatae ad facilis cum similique qui sunt",
+        price: 10
       },
       {
         id: 6,
         name: "So-so cat",
         img:
           "https://www.cat-breeds-encyclopedia.com/images/American-bobtail-cat.jpg",
-        title: "accusamus beatae ad facilis cum similique qui sunt"
+        title: "accusamus beatae ad facilis cum similique qui sunt",
+        price: 100
       },
       {
         id: 7,
         name: "Big cat",
         img: "https://i.ytimg.com/vi/RlwCG7r4saw/maxresdefault.jpg",
-        title: "accusamus beatae ad facilis cum similique qui sunt"
+        title: "accusamus beatae ad facilis cum similique qui sunt",
+        price: 1000
       },
       {
         id: 8,
         name: "Small cat",
         img: "https://i.ytimg.com/vi/hiSlzuoRtIA/maxresdefault.jpg",
-        title: "accusamus beatae ad facilis cum similique qui sunt"
+        title: "accusamus beatae ad facilis cum similique qui sunt",
+        price: 10
       },
       {
         id: 9,
         name: "So-so cat",
         img:
           "https://www.cat-breeds-encyclopedia.com/images/American-bobtail-cat.jpg",
-        title: "accusamus beatae ad facilis cum similique qui sunt"
+        title: "accusamus beatae ad facilis cum similique qui sunt",
+        price: 100
       }
     ],
     showMenu: false,
@@ -171,7 +180,7 @@ class App extends Component {
 
               <Store
                 className=""
-                products={this.state.store}
+                products={this.state.products}
                 onAddCounter={this.handleAddCounter}
               />
             </div>
@@ -272,7 +281,7 @@ class App extends Component {
                 </main>
               ) : null}
               <Store
-                products={this.state.store}
+                products={this.state.products}
                 onAddCounter={this.handleAddCounter}
               />
             </div>

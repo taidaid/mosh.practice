@@ -5,7 +5,7 @@ import "./Product.css";
 const Product = ({ id, title, img, onAddCounter, name }) => {
   return (
     // add dynamic prices
-    <div className="Product">
+    <div className="Product ma4">
       <article
         className="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center"
         onClick={() => {
