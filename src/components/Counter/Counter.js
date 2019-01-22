@@ -11,9 +11,18 @@ class Counter extends Component {
       onResetCounter,
       onDecrement
     } = this.props;
+
+    const counterHeaderStyles = {
+      display: "flex",
+      justifyContent: "space-around"
+    };
     return (
       <div>
-        <h4>{counter.name}</h4>
+        <div style={counterHeaderStyles}>
+          <h4>{counter.name}</h4>
+          <h4>{`id: ${counter.id}`}</h4>
+        </div>
+
         <div className="Counter">
           <div className="Amount">
             <button

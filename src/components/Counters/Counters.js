@@ -14,12 +14,14 @@ class Counters extends Component {
       counters
     } = this.props;
 
+    const styles = { display: "flex", justifyContent: "space-around" };
+
     return (
-      <div className="Counters o-80">
-        <div className="list pl0 ml0 center ba b--light-silver br2">
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div className="Counters o-80 ml5">
+        <div className="list pl0 ml0 center">
+          <div style={styles}>
             <button
-              className="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-green"
+              className="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-gray"
               onClick={onResetAll}
             >
               Reset

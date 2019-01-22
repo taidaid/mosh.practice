@@ -89,7 +89,7 @@ class App extends Component {
 
     if (!counters.filter(counter => counter.id === id).length > 0) {
       // console.log("counter id: " + counters.id);
-      counters.push({ id: id, name: name, value: 0 });
+      counters.push({ id: id, name: name, value: 1 });
     }
 
     this.setState(counters);

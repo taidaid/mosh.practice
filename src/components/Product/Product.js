@@ -2,7 +2,7 @@ import React from "react";
 import "tachyons";
 import "./Product.css";
 
-const Product = ({ id, title, img, onAddCounter, name }) => {
+const Product = ({ id, title, img, onAddCounter, name, price }) => {
   return (
     // add dynamic prices
     <div className="Product ma4">
@@ -17,7 +17,7 @@ const Product = ({ id, title, img, onAddCounter, name }) => {
         <div className="pa2 ph3-ns pb3-ns">
           <div className="dt w-100 mt1">
             <div className="dtc tr">
-              <h2 className="f5 mv0">$1000</h2>
+              <h2 className="f5 mv0">{`$${price}`}</h2>
             </div>
           </div>
           <p className="f6 lh-copy measure mt2 mid-gray">{title}</p>
